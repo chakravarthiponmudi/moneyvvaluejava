@@ -112,7 +112,6 @@ EOSQL
       transactionid               VARCHAR(60) NOT NULL
     );
 EOSQL
-  psql -v ON_ERROR_STOP=1 --username "$FILLA_DB_USER" -d "$FILLA_DB_DATABASE" -a -f "./codes-audit.sql"
 }
 
 # Executes the main routine with environment variables

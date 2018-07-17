@@ -1,8 +1,8 @@
 version: '3.2'
 services:
   postgres:
-  	name:moneyvaluedb
     restart: 'always'
+    image: moneyvaluedb
     ports:
       - '5432:5432'
     environment:
