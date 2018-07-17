@@ -1,0 +1,19 @@
+version: '3.2'
+services:
+  postgres:
+  	name:moneyvaluedb
+    restart: 'always'
+    ports:
+      - '5432:5432'
+    environment:
+      - "FILLA_DB_USER=cslocal"
+      - "FILLA_DB_PASSWORD=cslocal@007"
+      - "FILLA_DB_DATABASE=codingservice"
+      - "POSTGRES_PASSWORD=password"
+    build: './db'
+    networks:
+      infranet:
+        aliases:
+          - 'postgres'
+networks:
+  infranet:
