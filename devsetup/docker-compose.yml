@@ -6,9 +6,9 @@ services:
     ports:
       - '5432:5432'
     environment:
-      - "FILLA_DB_USER=cslocal"
-      - "FILLA_DB_PASSWORD=cslocal@007"
-      - "FILLA_DB_DATABASE=codingservice"
+      - "FILLA_DB_USER=mvlocal"
+      - "FILLA_DB_PASSWORD=mvlocal@007"
+      - "FILLA_DB_DATABASE=moneyvalue"
       - "POSTGRES_PASSWORD=password"
     build: './db'
     networks:

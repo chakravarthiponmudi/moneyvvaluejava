@@ -54,7 +54,7 @@ init_user_and_db() {
 EOSQL
 
   psql -v ON_ERROR_STOP=1 --username "$FILLA_DB_USER" -d "$FILLA_DB_DATABASE" <<-EOSQL
-    CREATE TABLE codingworklist (
+    CREATE TABLE family (
       id                      bigserial PRIMARY KEY,
       contextid               BIGINT NOT NULL,
       visitid                 BIGINT NOT NULL,
@@ -71,45 +71,6 @@ EOSQL
       lastmodified            timestamptz,
       lastmodifiedby          VARCHAR(20),
       transactionid           VARCHAR(60) NOT NULL
-    );
-    
-    CREATE TABLE VISITBILLDIAGNOSIS (
-      id                          bigserial PRIMARY KEY,
-      saveinfo                    JSONB,
-      codingworklistid            BIGINT NOT NULL REFERENCES codingworklist (id),
-      deleted                     timestamptz,
-      deletedby                   VARCHAR(20),
-      created                     timestamptz,
-      createdby                   VARCHAR(20),
-      lastmodified                timestamptz,
-      lastmodifiedby              VARCHAR(20),
-      transactionid               VARCHAR(60) NOT NULL
-    );
-
-    CREATE TABLE VISITBILLPROCEDURE (
-      id                          bigserial PRIMARY KEY,
-      saveinfo                    JSONB,
-      codingworklistid            BIGINT NOT NULL REFERENCES codingworklist (id),
-      deleted                     timestamptz,
-      deletedby                   VARCHAR(20),
-      created                     timestamptz,
-      createdby                   VARCHAR(20),
-      lastmodified                timestamptz,
-      lastmodifiedby              VARCHAR(20),
-      transactionid               VARCHAR(60) NOT NULL
-    );
-    
-    CREATE TABLE VISITCHARGE (
-      id                          bigserial PRIMARY KEY,
-      saveinfo                    JSONB,
-      codingworklistid            BIGINT NOT NULL REFERENCES codingworklist (id),
-      deleted                     timestamptz,
-      deletedby                   VARCHAR(20),
-      created                     timestamptz,
-      createdby                   VARCHAR(20),
-      lastmodified                timestamptz,
-      lastmodifiedby              VARCHAR(20),
-      transactionid               VARCHAR(60) NOT NULL
     );
 EOSQL
 }
