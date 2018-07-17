@@ -1,0 +1,9 @@
+set -o errexit
+
+readonly REQUIRED_ENV_VARS=(
+	"FILLA_DB_USER"
+	"FILLA_DB_PASSWORD"
+	"FILLA_DB_DATABASE"
+	"POSTGRES_USER")
+	
+	

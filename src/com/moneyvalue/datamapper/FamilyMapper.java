@@ -7,6 +7,12 @@ public class FamilyMapper {
 		return null;
 	}
 	
+	public static Family getFamily() {
+		
+		return null;
+	}
+	
+	
 	public static int update(Family family) {
 		return 0;
 	}
