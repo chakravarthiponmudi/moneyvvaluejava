@@ -45,6 +45,12 @@ public class PostgreSQLJDBCConnection {
 		}
         
 	}
+	
+	public ResultSet executeQuery(String sql) throws SQLException {
+		Statement stmt = c.createStatement();
+		ResultSet rs = stmt.executeQuery( sql );
+		return rs;
+	}
 //	 public static void main(String args[]) {
 //	      Connection c = null;
 //	      Statement stmt = null;
