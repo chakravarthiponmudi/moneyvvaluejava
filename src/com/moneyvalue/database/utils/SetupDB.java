@@ -39,8 +39,8 @@ public class SetupDB {
 	            "(ID INT PRIMARY KEY     NOT NULL," +
 	            "FIRSTNAME           TEXT    NOT NULL," +
 	            "LASTNAME            TEXT    NOT NULL," +
-	            "FAMILY				 INT     NOT NULL," +
-	            "FOREIGN KEY(FAMILY) REFERENCES family(id) " +
+	            "FAMILYID			 INT     NOT NULL," +
+	            "FOREIGN KEY(FAMILYID) REFERENCES family(id) " +
 	            ")";
 		executeSql(connection, sql);
 		
@@ -54,10 +54,10 @@ public class SetupDB {
 		
 		sql = "CREATE TABLE Accountmap " +
 	            "(ID INT PRIMARY KEY     NOT NULL," +
-	            "PERSON          INT    NOT NULL," +
-	            "ACCOUNT          INT    NOT NULL," +
-	            "FOREIGN KEY(PERSON) REFERENCES PERSON(id), " +
-	            "FOREIGN KEY(ACCOUNT) REFERENCES ACCOUNT(id) " +
+	            "PERSONID          INT    NOT NULL," +
+	            "ACCOUNTID          INT    NOT NULL," +
+	            "FOREIGN KEY(PERSONID) REFERENCES PERSON(id), " +
+	            "FOREIGN KEY(ACCOUNTID) REFERENCES ACCOUNT(id) " +
 	            ")";
 		executeSql(connection, sql);
 		
@@ -65,9 +65,9 @@ public class SetupDB {
 	            "(ID INT PRIMARY KEY     NOT NULL," +
 	            "TYPE          TEXT    NOT NULL," +
 	            "transaction_date   DATE NOT NULL," +
-	            "AMOUNT NUMERIC(9,2) DEFAULT 0.0," +
+	            "AMOUNTID NUMERIC(9,2) DEFAULT 0.0," +
 	            "ACCOUNT INT NOT NULL," +
-	            "FOREIGN KEY(ACCOUNT) REFERENCES ACCOUNT(id) " +
+	            "FOREIGN KEY(ACCOUNTID) REFERENCES ACCOUNT(id) " +
 	            ")";
 		executeSql(connection, sql);
 		

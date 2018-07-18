@@ -10,13 +10,19 @@ import com.moneyvalue.lazyloaders.implementations.PersonListImpl;
 public class PersonListProxy implements PersonList {
 
 	Family familyObj;
+	PersonListImpl personList = null;
 	public PersonListProxy(Family familyObj) {
 		this.familyObj = familyObj;
 	}
 	@Override
 	public List<Person> getPerson() {
 		// TODO Auto-generated method stub
-		new PersonListImpl(familyObj).getPerson()
+		if (personList == null) {
+			personList = new PersonListImpl(familyObj);
+		} 
+
+		return personList.getPerson();	
+		
 	}
 
 }

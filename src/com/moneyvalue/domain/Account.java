@@ -17,4 +17,20 @@ public class Account {
 		return description;
 		
 	}
+	
+	public void addIncome() {
+		
+	}
+	
+	public void addExpense() {
+		
+	}
+	
+	public void addIncomeReversal() {
+		
+	}
+	
+	public void addExpenseReversal() {
+		
+	}
 }

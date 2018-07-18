@@ -1,9 +1,16 @@
 package com.moneyvalue.datamapper;
 
+import java.util.List;
+
 import com.moneyvalue.domain.Account;
+import com.moneyvalue.domain.Person;
 
 public class AccountMapper {
 	public static Account find(int id) {
+		return null;
+	}
+	
+	public static List<Account> findByPerson(Person p) {
 		return null;
 	}
 	
