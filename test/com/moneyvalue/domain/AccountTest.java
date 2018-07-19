@@ -53,7 +53,7 @@ public class AccountTest {
 		Credit[] trans = null;
 
 		
-		Account newAccount = new Account(trans, 1, "my test account", 10.99);
+		Account newAccount = new Account(1, "my test account", null, 10.99);
 		System.out.println(newAccount);
 //		fail("Not yet implemented"); // TODO
 	}
