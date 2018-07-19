@@ -1,18 +1,14 @@
 package com.moneyvalue.domain;
 
-public class Credit implements Transaction {
+public class Credit extends Transaction {
 
-	private  double amount;
-	private String description;
-	
-	Credit(double amount, String description) {
-		this.amount = amount;
-		this.description = description;
+
+	public Credit(int id, double amount, String description) {
+		super(id, amount, description);
 	}
+
 	@Override
 	public double apply() {
-		// TODO Auto-generated method stub
-		
 		return this.amount;
 	}
 

@@ -64,9 +64,10 @@ public class SetupDB {
 		sql = "CREATE TABLE transaction " +
 	            "(ID INT PRIMARY KEY     NOT NULL," +
 	            "TYPE          TEXT    NOT NULL," +
-	            "transaction_date   DATE NOT NULL," +
-	            "AMOUNTID NUMERIC(9,2) DEFAULT 0.0," +
-	            "ACCOUNT INT NOT NULL," +
+	            "DESCRIPTION TEXT NOT NULL," +
+	            "TRANSACTION_DATE   DATE NOT NULL," +
+	            "AMOUNT NUMERIC(9,2) DEFAULT 0.0," +
+	            "ACCOUNTID INT NOT NULL," +
 	            "FOREIGN KEY(ACCOUNTID) REFERENCES ACCOUNT(id) " +
 	            ")";
 		executeSql(connection, sql);

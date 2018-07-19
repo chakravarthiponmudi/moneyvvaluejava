@@ -21,7 +21,7 @@ public class PersonListProxy implements PersonList {
 			personList = new PersonListImpl(familyObj);
 		} 
 
-		return personList.getPerson();	
+		return personList.get();	
 	}
 	@Override
 	public void add(Person obj) {

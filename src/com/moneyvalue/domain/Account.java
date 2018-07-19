@@ -16,10 +16,18 @@ public class Account {
 		this.balance = balance;
 	}
 	
+	public int getId() {
+		return this.id;
+	}
+	
 	public String toString() {
 		String description = "Account Name :" + this.name + "\n\tid:" + this.id + "\n\tBalance:" + this.balance;	
 		return description;
 		
+	}
+	
+	public void setTransactionList(TransactionList tList) {
+		this.transactionList = tList;
 	}
 	
 	public List<Transaction> getTransactions() {

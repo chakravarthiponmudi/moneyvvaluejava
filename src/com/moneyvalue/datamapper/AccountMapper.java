@@ -7,6 +7,7 @@ import java.util.List;
 
 import com.moneyvalue.domain.Account;
 import com.moneyvalue.domain.Person;
+import com.moneyvalue.lazyloaders.virtualproxy.TransactionListProxy;
 
 public class AccountMapper extends DomainMapper {
 	public static Account find(int id) {
@@ -24,6 +25,7 @@ public class AccountMapper extends DomainMapper {
 			    String  type = rs.getString("TYPE");
 			    double balance = rs.getDouble("BALANCE");
 			    Account account = new Account(id,name,type,balance);
+			    account.setTransactionList(new TransactionListProxy(account));
 			    
 			    
 			}
