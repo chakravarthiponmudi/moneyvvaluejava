@@ -15,7 +15,7 @@ public class AccountMapper extends DomainMapper {
 	}
 	
 	public static List<Account> findByPerson(Person p) {
-		String sql = "SELECT * FROM ACCOUNT WHERE PERSONID =" + p.getId(); 
+		String sql = "SELECT ACCOUNT.* FROM ACCOUNT,ACCOUNTMAP WHERE ACCOUNTMAP.ACCOUNTID = ACCOUNT.ID and ACCOUNTMAP.PERSONID =" + p.getId(); 
 		ArrayList<Account> accountList = new ArrayList<Account>();
 		ResultSet rs = getDomainObjectUsingSQL(sql);
 		try {
