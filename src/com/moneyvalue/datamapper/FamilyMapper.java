@@ -2,11 +2,10 @@ package com.moneyvalue.datamapper;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import com.moneyvalue.database.utils.PostgreSQLJDBCConnection;
 import com.moneyvalue.domain.Family;
 import com.moneyvalue.lazyloaders.virtualproxy.PersonListProxy;
 
-public class FamilyMapper {
+public class FamilyMapper extends DomainMapper {
 	public static Family find(int id) {
 		return null;
 	}
@@ -43,24 +42,4 @@ public class FamilyMapper {
 	public static Family create(Family family) {
 		return null;
 	}
-	
-	private static ResultSet getDomainObjectUsingSQL(String stmt) {
-		PostgreSQLJDBCConnection connection = null;
-		try {
-			connection = new PostgreSQLJDBCConnection();
-			return connection.executeQuery(stmt);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			return null;
-		} finally {
-			try {
-				connection.close();
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-			}
-		}
-	}
-	
-	
 }

@@ -23,7 +23,7 @@ public class Family {
 	}
 
 	public List<Person> getMembers() {
-		return memberList.getPerson();
+		return memberList.get();
 	}
 
 	public void setMemberList(PersonList members) {

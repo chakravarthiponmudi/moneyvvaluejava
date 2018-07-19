@@ -19,6 +19,9 @@ public class Person {
 		this.accountList = accountList;
 	}
 	
+	public int getId() {
+		return id;
+	}
 	public Person(int id, String fname, String lname) {
 		this.id = id;
 		this.fname = fname;
@@ -26,7 +29,7 @@ public class Person {
 	}
 	
 	public List<Account> getAccounts() {
-		return accountList.getAccounts();
+		return accountList.get();
 	}
 	
 	public void spend() {

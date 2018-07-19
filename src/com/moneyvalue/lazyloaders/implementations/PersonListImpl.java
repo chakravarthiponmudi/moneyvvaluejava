@@ -16,10 +16,17 @@ public class PersonListImpl implements PersonList {
 		this.familyObj = familyObj;
 	}
 
+
 	@Override
-	public List<Person> getPerson() {
+	public List<Person> get() {
 		// TODO Auto-generated method stub
 		return PersonMapper.findByFamilyID(familyObj);
+	}
+
+	@Override
+	public void add(Person obj) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

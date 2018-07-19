@@ -5,30 +5,11 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.moneyvalue.database.utils.PostgreSQLJDBCConnection;
 import com.moneyvalue.domain.Family;
 import com.moneyvalue.domain.Person;
 import com.moneyvalue.lazyloaders.virtualproxy.AccountListProxy;
 
-public class PersonMapper {
-	
-	private static ResultSet getDomainObjectUsingSQL(String stmt) {
-		PostgreSQLJDBCConnection connection = null;
-		try {
-			connection = new PostgreSQLJDBCConnection();
-			return connection.executeQuery(stmt);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			return null;
-		} finally {
-			try {
-				connection.close();
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-			}
-		}
-	}
+public class PersonMapper extends DomainMapper {
 	
 	public static List<Person> findByFamilyID(Family family) {
 		String sql = "SELECT * from PERSON where FAMILYID=" + family.getId();

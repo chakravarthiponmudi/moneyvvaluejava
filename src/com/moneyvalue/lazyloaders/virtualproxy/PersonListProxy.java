@@ -14,14 +14,18 @@ public class PersonListProxy implements PersonList {
 	public PersonListProxy(Family familyObj) {
 		this.familyObj = familyObj;
 	}
+
 	@Override
-	public List<Person> getPerson() {
-		// TODO Auto-generated method stub
+	public List<Person> get() {
 		if (personList == null) {
 			personList = new PersonListImpl(familyObj);
 		} 
 
 		return personList.getPerson();	
+	}
+	@Override
+	public void add(Person obj) {
+		// TODO Auto-generated method stub
 		
 	}
 

@@ -18,9 +18,15 @@ public class AccountListImpl implements AccountList {
 	}
 
 	@Override
-	public List<Account> getAccounts() {
+	public List<Account> get() {
 		// TODO Auto-generated method stub
 		return AccountMapper.findByPerson(this.personObj);
+	}
+
+	@Override
+	public void add(Account obj) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

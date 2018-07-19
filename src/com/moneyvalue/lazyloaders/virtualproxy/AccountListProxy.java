@@ -16,12 +16,20 @@ public class AccountListProxy implements AccountList {
 		this.personObj = personObj;
 	}
 
+
 	@Override
-	public List<Account> getAccounts() {
+	public List<Account> get() {
+		// TODO Auto-generated method stub
 		if (accountListImplObj == null) {
 			accountListImplObj = new AccountListImpl(personObj);
 		}
-		return accountListImplObj.getAccounts();
+		return accountListImplObj.get();
+	}
+
+	@Override
+	public void add(Account obj) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
