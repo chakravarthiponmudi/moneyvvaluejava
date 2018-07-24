@@ -4,7 +4,7 @@ import java.sql.ResultSet;
 
 import com.moneyvalue.database.utils.PostgreSQLJDBCConnection;
 
-public class DomainMapper {
+public class AbstractMaper {
 	protected static ResultSet getDomainObjectUsingSQL(String stmt) {
 		PostgreSQLJDBCConnection connection = null;
 		try {

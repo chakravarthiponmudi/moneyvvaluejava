@@ -9,7 +9,7 @@ import com.moneyvalue.domain.Family;
 import com.moneyvalue.domain.Person;
 import com.moneyvalue.lazyloaders.virtualproxy.AccountListProxy;
 
-public class PersonMapper extends DomainMapper {
+public class PersonMapper extends AbstractMaper {
 	
 	public static List<Person> findByFamilyID(Family family) {
 		String sql = "SELECT * from PERSON where FAMILYID=" + family.getId();

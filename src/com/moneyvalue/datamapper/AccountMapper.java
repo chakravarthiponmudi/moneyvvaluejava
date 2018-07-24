@@ -9,7 +9,7 @@ import com.moneyvalue.domain.Account;
 import com.moneyvalue.domain.Person;
 import com.moneyvalue.lazyloaders.virtualproxy.TransactionListProxy;
 
-public class AccountMapper extends DomainMapper {
+public class AccountMapper extends AbstractMaper {
 	public static Account find(int id) {
 		return null;
 	}

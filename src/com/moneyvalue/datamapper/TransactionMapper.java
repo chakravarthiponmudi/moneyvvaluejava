@@ -11,7 +11,7 @@ import com.moneyvalue.domain.Credit;
 import com.moneyvalue.domain.Debit;
 import com.moneyvalue.domain.Transaction;
 
-public class TransactionMapper extends DomainMapper {
+public class TransactionMapper extends AbstractMaper {
 	public static List<Transaction> findByAccount(Account a) {
 		String sql = "SELECT * FROM TRANSACTION WHERE ACCOUNTID =" + a.getId(); 
 		ArrayList<Transaction> transactionList = new ArrayList<Transaction>();
