@@ -32,16 +32,32 @@ public class SetupDB {
 		sql = "drop table family";
 		executeSql(connection, sql);
 		
+		sql = "drop table identitykey";
+		executeSql(connection, sql);
+		
+		sql = "CREATE TABLE IDENTITYKEY" +
+				"(TABLENAME TEXT NOT NULL," +
+				"NEXTKEY INTEGER NOT NULL)" ;
+		executeSql(connection, sql);
+		
+		sql = "INSERT INTO IDENTITYKEY(TABLENAME, NEXTKEY) VALUES" +
+				"('FAMILY',2)," +
+				"('PERSON',5)," +
+				"('ACCOUNT',8)," +
+				"('TRANSACTION',9)";
+		executeSql(connection, sql);
+				
+		
 		sql = "CREATE TABLE FAMILY " +
-	            "(ID  			SERIAL PRIMARY KEY," +
+	            "(ID  			INTEGER PRIMARY KEY," +
 	            " NAME          TEXT    NOT NULL)" ;
 		executeSql(connection, sql);
 		
-		sql = "INSERT INTO FAMILY(NAME) values('PONMUDI ILLAM')";
+		sql = "INSERT INTO FAMILY(ID, NAME) values(1,'PONMUDI ILLAM')";
 		executeSql(connection, sql);
 
 		sql = "CREATE TABLE PERSON " +
-	            "(ID SERIAL PRIMARY KEY," +
+	            "(ID INTEGER PRIMARY KEY," +
 	            "FIRSTNAME           TEXT    NOT NULL," +
 	            "LASTNAME            TEXT    NOT NULL," +
 	            "FAMILYID			 INT     NOT NULL," +
@@ -49,30 +65,30 @@ public class SetupDB {
 	            ")";
 		executeSql(connection, sql);
 		
-		sql = "INSERT INTO PERSON (FIRSTNAME, LASTNAME,FAMILYID) VALUES" +
-				"('CHAKRAVARTHI', 'PONMUDI', 1)," +
-				"('PONMUDI','ADIGAL',1)," +
-				"('SUSEELA','PONMUDI',1)," +
-				"('SARANYA','CHAKRAVARTHI',1)" ;
+		sql = "INSERT INTO PERSON (ID, FIRSTNAME, LASTNAME,FAMILYID) VALUES" +
+				"(1,'CHAKRAVARTHI', 'PONMUDI', 1)," +
+				"(2,'PONMUDI','ADIGAL',1)," +
+				"(3,'SUSEELA','PONMUDI',1)," +
+				"(4,'SARANYA','CHAKRAVARTHI',1)" ;
 		
 		executeSql(connection, sql);
 		
 		sql = "CREATE TABLE Account " +
-	            "(ID SERIAL PRIMARY KEY," +
+	            "(ID INTEGER PRIMARY KEY," +
 	            "NAME           TEXT    NOT NULL," +
 	            "TYPE            TEXT    NOT NULL," +
 	            "BALANCE			NUMERIC(9,2) DEFAULT 0.0" +
 	            ")";
 		executeSql(connection, sql);
 		
-		sql = "INSERT INTO ACCOUNT(NAME, TYPE,BALANCE) VALUES" +
-				"('ICICIBANK','SAVINGS',500.00)," +
-				"('HDFCBANK','SAVINGS',500.00)," +
-				"('VIJAYABANK','SAVINGS',500.00)," +
-				"('SBIBANK','SAVINGS',500.00)," +
-				"('VIJAYABANK','SAVINGS',500.00)," +
-				"('VIJAYABANK','SAVINGS',500.00)," +
-				"('AXISBANK','SAVINGS',500.00)";
+		sql = "INSERT INTO ACCOUNT(ID, NAME, TYPE,BALANCE) VALUES" +
+				"(1,'ICICIBANK','SAVINGS',500.00)," +
+				"(2,'HDFCBANK','SAVINGS',500.00)," +
+				"(3,'VIJAYABANK','SAVINGS',500.00)," +
+				"(4,'SBIBANK','SAVINGS',500.00)," +
+				"(5,'VIJAYABANK','SAVINGS',500.00)," +
+				"(6,'VIJAYABANK','SAVINGS',500.00)," +
+				"(7,'AXISBANK','SAVINGS',500.00)";
 		executeSql(connection, sql);
 		
 		sql = "CREATE TABLE Accountmap " +
@@ -96,7 +112,7 @@ public class SetupDB {
 		executeSql(connection, sql);
 		
 		sql = "CREATE TABLE transaction " +
-	            "(ID SERIAL PRIMARY KEY," +
+	            "(ID INTEGER PRIMARY KEY," +
 	            "TYPE          TEXT    NOT NULL," +
 	            "DESCRIPTION TEXT NOT NULL," +
 	            "TRANSACTION_DATE   DATE NOT NULL," +
@@ -107,15 +123,15 @@ public class SetupDB {
 		executeSql(connection, sql);
 		
 		
-		sql = "INSERT INTO TRANSACTION(TYPE,DESCRIPTION,TRANSACTION_DATE,AMOUNT,ACCOUNTID) VALUES" +
-				"('CR','OPENING ACCOUNT','2018-02-20',1000.00,1)," +
-				"('DR','OPENING ACCOUNT','2018-02-20',500.00,1)," +
-				"('CR','OPENING ACCOUNT','2018-02-20',500.00,2)," +
-				"('CR','OPENING ACCOUNT','2018-02-20',500.00,3)," +
-				"('CR','OPENING ACCOUNT','2018-02-20',500.00,4)," +
-				"('CR','OPENING ACCOUNT','2018-02-20',500.00,5)," +
-				"('CR','OPENING ACCOUNT','2018-02-20',500.00,6)," +
-				"('CR','OPENING ACCOUNT','2018-02-20',500.00,7)";
+		sql = "INSERT INTO TRANSACTION(ID, TYPE,DESCRIPTION,TRANSACTION_DATE,AMOUNT,ACCOUNTID) VALUES" +
+				"(1,'CR','OPENING ACCOUNT','2018-02-20',1000.00,1)," +
+				"(2,'DR','OPENING ACCOUNT','2018-02-20',500.00,1)," +
+				"(3,'CR','OPENING ACCOUNT','2018-02-20',500.00,2)," +
+				"(4,'CR','OPENING ACCOUNT','2018-02-20',500.00,3)," +
+				"(5,'CR','OPENING ACCOUNT','2018-02-20',500.00,4)," +
+				"(6,'CR','OPENING ACCOUNT','2018-02-20',500.00,5)," +
+				"(7,'CR','OPENING ACCOUNT','2018-02-20',500.00,6)," +
+				"(8,'CR','OPENING ACCOUNT','2018-02-20',500.00,7)";
 		
 		executeSql(connection, sql);
 		

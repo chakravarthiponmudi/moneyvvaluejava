@@ -53,26 +53,6 @@ init_user_and_db() {
      ALTER DATABASE $FILLA_DB_DATABASE SET timezone TO 'US/Eastern';
 EOSQL
 
-  psql -v ON_ERROR_STOP=1 --username "$FILLA_DB_USER" -d "$FILLA_DB_DATABASE" <<-EOSQL
-    CREATE TABLE family (
-      id                      bigserial PRIMARY KEY,
-      contextid               BIGINT NOT NULL,
-      visitid                 BIGINT NOT NULL,
-      visitbillid             BIGINT NOT NULL,
-      diagnosisrelatedgroup   VARCHAR(10),
-      ambulatorypaymentclass  VARCHAR(10),
-      vendorid                VARCHAR(30),
-      status                  VARCHAR(20),
-      worklistid              BIGINT,
-      deleted                 timestamptz,
-      deletedby               VARCHAR(20),
-      created                 timestamptz,
-      createdby               VARCHAR(20),
-      lastmodified            timestamptz,
-      lastmodifiedby          VARCHAR(20),
-      transactionid           VARCHAR(60) NOT NULL
-    );
-EOSQL
 }
 
 # Executes the main routine with environment variables
