@@ -38,6 +38,8 @@ public abstract class AbstractMaper {
 		try {
 			while( rs.next()) {
 				dObj = doLoad(rs);
+				int id = rs.getInt("id");
+				dObj.setId(id);
 			}
 		}
 		catch (SQLException e) {

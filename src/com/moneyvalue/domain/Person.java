@@ -7,7 +7,6 @@ import com.moneyvalue.lazyloaders.AccountList;
 public class Person  extends DomainObject{
 	private AccountList accountList;
 	private Family family;
-	private int id;
 	private String fname;
 	private String lname;
 	
@@ -19,11 +18,8 @@ public class Person  extends DomainObject{
 		this.accountList = accountList;
 	}
 	
-	public int getId() {
-		return id;
-	}
-	public Person(int id, String fname, String lname) {
-		this.id = id;
+
+	public Person(String fname, String lname) {
 		this.fname = fname;
 		this.lname = lname;
 	}

@@ -29,11 +29,9 @@ public class PersonMapper extends AbstractMaper {
 	@Override
 	protected Person doLoad(ResultSet rs) throws SQLException {
 		// TODO Auto-generated method stub
-		int id = rs.getInt("id");
 	    String  fname = rs.getString("FIRSTNAME");
 	    String  lname = rs.getString("LASTNAME");
-	    Person personObj = new Person(id, fname, lname);
-//	    personObj.setFamily(family);
+	    Person personObj = new Person(fname, lname);
 	    personObj.setAccountList(new AccountListProxy(personObj));
 		return personObj;
 	}

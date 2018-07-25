@@ -1,13 +1,11 @@
 package com.moneyvalue.domain;
 public abstract class Transaction  extends DomainObject {
 
-	protected int id;
 	protected String description;
 	protected  double amount;
 	protected Account account;
 	
-	public Transaction(int id, double amount, String description) {
-		this.id = id;
+	public Transaction(double amount, String description) {
 		this.amount = amount;
 		this.description = description;
 	}

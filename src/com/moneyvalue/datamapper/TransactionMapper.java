@@ -31,13 +31,12 @@ public class TransactionMapper extends AbstractMaper {
 	@Override
 	protected Transaction doLoad(ResultSet rs) throws SQLException {
 		// TODO Auto-generated method stub
-		int id = rs.getInt("id");
 		String  type = rs.getString("TYPE");
 	    String  description = rs.getString("DESCRIPTION");
 	    Date date = rs.getDate("TRANSACTION_DATE");
 	    double amount = rs.getDouble("AMOUNT");
 	    
-	    Transaction transaction = type == "CR" ? new Credit(id, amount, type) : new Debit(id, amount, description);
+	    Transaction transaction = type == "CR" ? new Credit(amount, type) : new Debit(amount, description);
 	    return transaction;
 	}
 

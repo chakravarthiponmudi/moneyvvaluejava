@@ -22,11 +22,10 @@ public class AccountMapper extends AbstractMaper {
 	
 	@SuppressWarnings("unchecked")
 	protected DomainObject doLoad(ResultSet rs) throws SQLException {
-	    int id = rs.getInt("id");
 	    String  name = rs.getString("NAME");
 	    String  type = rs.getString("TYPE");
 	    double balance = rs.getDouble("BALANCE");
-	    Account account = new Account(id,name,type,balance);
+	    Account account = new Account(name,type,balance);
 	    account.setTransactionList(new TransactionListProxy(account));
 	    return account;
 	}

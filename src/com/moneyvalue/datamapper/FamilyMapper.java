@@ -21,10 +21,8 @@ public class FamilyMapper extends AbstractMaper {
 		ResultSet rs = getResultSet(sql);
 		try {
 			while ( rs.next() ) {
-			    int id = rs.getInt("id");
 			    String  name = rs.getString("name");
-			    familyObj = new Family(id, name);
-			    
+			    familyObj = new Family(name);
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -65,9 +63,8 @@ public class FamilyMapper extends AbstractMaper {
 	@Override
 	protected Family doLoad(ResultSet rs) throws SQLException {
 		// TODO Auto-generated method stub
-		int id = rs.getInt("id");
 	    String  name = rs.getString("name");
-	    Family familyObj = new Family(id, name);
+	    Family familyObj = new Family(name);
 	    return familyObj;
 	}
 

@@ -2,8 +2,8 @@ package com.moneyvalue.domain;
 
 public class Debit extends Transaction {
 
-	public Debit(int id, double amount, String description) {
-		super(id, amount, description);
+	public Debit(double amount, String description) {
+		super(amount, description);
 		// TODO Auto-generated constructor stub
 	}
 

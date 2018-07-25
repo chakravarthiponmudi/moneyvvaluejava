@@ -6,19 +6,15 @@ import com.moneyvalue.lazyloaders.PersonList;
 
 public class Family  extends DomainObject {
 	private PersonList memberList;
-	private int id;
 	private String name;
 	
-	public int getId() {
-		return this.id;
-	}
+
 	
 	public String getName() {
 		return this.name;
 	}
 	
-	public Family(int id, String name) {
-		this.id = id;
+	public Family(String name) {
 		this.name = name;
 	}
 

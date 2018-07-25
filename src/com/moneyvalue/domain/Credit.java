@@ -3,8 +3,8 @@ package com.moneyvalue.domain;
 public class Credit extends Transaction {
 
 
-	public Credit(int id, double amount, String description) {
-		super(id, amount, description);
+	public Credit(double amount, String description) {
+		super(amount, description);
 	}
 
 	@Override
