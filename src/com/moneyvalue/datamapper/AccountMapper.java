@@ -4,8 +4,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
-
 import com.moneyvalue.domain.Account;
 import com.moneyvalue.domain.DomainObject;
 import com.moneyvalue.domain.Person;
@@ -49,6 +47,14 @@ public class AccountMapper extends AbstractMaper {
 	public static Account create(Account family) {
 		return null;
 	}
+
+	@Override
+	protected String findStatement(Object o) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
 
 	
 }

@@ -20,7 +20,7 @@ public class PersonListImpl implements PersonList {
 	@Override
 	public List<Person> get() {
 		// TODO Auto-generated method stub
-		return PersonMapper.findByFamilyID(familyObj);
+		return new PersonMapper().findByFamilyID(familyObj);
 	}
 
 	@Override

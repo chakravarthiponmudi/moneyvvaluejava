@@ -4,8 +4,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
-
 import com.moneyvalue.domain.Family;
 import com.moneyvalue.domain.Person;
 import com.moneyvalue.lazyloaders.virtualproxy.AccountListProxy;
@@ -14,8 +12,10 @@ public class PersonMapper extends AbstractMaper {
 	
 	public List<Person> findByFamilyID(Family family) {
 		ArrayList<Person> personList = this.abstractFindBy(family);
-		List<Person> pList = personList.stream().map(person -> person.setFamily(familyObj)).collect(Collectors.toList());
-		return pList;
+		for(Person person : personList) {
+			person.setFamily(family);
+		}
+		return personList;
 		
 	}
 
@@ -37,5 +37,12 @@ public class PersonMapper extends AbstractMaper {
 	    personObj.setAccountList(new AccountListProxy(personObj));
 		return personObj;
 	}
+
+	@Override
+	protected String findStatement(Object o) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 
 }

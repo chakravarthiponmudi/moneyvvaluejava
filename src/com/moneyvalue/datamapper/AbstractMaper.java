@@ -29,7 +29,24 @@ public abstract class AbstractMaper {
 		}
 	}
 	abstract protected String findByStatement(Object o);
+	abstract protected String findStatement(Object o);
 	abstract protected <T> T doLoad(ResultSet rs)  throws SQLException ;
+	
+	protected DomainObject abstractFind(Object o) {
+		ResultSet rs = getResultSet(this.findStatement(o));
+		DomainObject dObj =null;
+		try {
+			while( rs.next()) {
+				dObj = doLoad(rs);
+			}
+		}
+		catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return dObj;
+	}
+	
 	protected <T> ArrayList<T> abstractFindBy(Object o) {
 		String sql = this.findByStatement(o); 
 		ArrayList<T> dObjList = new ArrayList<T>();
