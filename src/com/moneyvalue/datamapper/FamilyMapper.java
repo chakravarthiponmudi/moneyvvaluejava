@@ -13,7 +13,7 @@ public class FamilyMapper extends AbstractMaper {
 	public static Family getFamily() {
 		String sql = "SELECT * from FAMILY";
 		Family familyObj = null;
-		ResultSet rs = getDomainObjectUsingSQL(sql);
+		ResultSet rs = getResultSet(sql);
 		try {
 			while ( rs.next() ) {
 			    int id = rs.getInt("id");

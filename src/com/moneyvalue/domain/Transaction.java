@@ -1,5 +1,5 @@
 package com.moneyvalue.domain;
-public abstract class Transaction  {
+public abstract class Transaction  extends DomainObject {
 
 	protected int id;
 	protected String description;

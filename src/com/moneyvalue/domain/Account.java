@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.moneyvalue.lazyloaders.TransactionList;
 
-public class Account {
+public class Account extends DomainObject{
 	private TransactionList transactionList;
 	private int id;
 	private String type;

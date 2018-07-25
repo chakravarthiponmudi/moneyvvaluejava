@@ -15,7 +15,7 @@ public class TransactionMapper extends AbstractMaper {
 	public static List<Transaction> findByAccount(Account a) {
 		String sql = "SELECT * FROM TRANSACTION WHERE ACCOUNTID =" + a.getId(); 
 		ArrayList<Transaction> transactionList = new ArrayList<Transaction>();
-		ResultSet rs = getDomainObjectUsingSQL(sql);
+		ResultSet rs = getResultSet(sql);
 		try {
 			while ( rs.next() ) {
 			    int id = rs.getInt("id");

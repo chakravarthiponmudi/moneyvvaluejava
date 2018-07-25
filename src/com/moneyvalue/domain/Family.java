@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.moneyvalue.lazyloaders.PersonList;
 
-public class Family {
+public class Family  extends DomainObject {
 	private PersonList memberList;
 	private int id;
 	private String name;
