@@ -11,7 +11,7 @@ import com.moneyvalue.domain.Credit;
 import com.moneyvalue.domain.Debit;
 import com.moneyvalue.domain.Transaction;
 
-public class TransactionMapper extends AbstractMaper {
+public class TransactionMapper extends AbstractMapper {
 	public List<Transaction> findByAccount(Account a) { 
 		ArrayList<Transaction> transactionList = this.abstractFindBy(a);
 		for(Transaction transaction: transactionList) {

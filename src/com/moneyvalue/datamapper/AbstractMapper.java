@@ -10,7 +10,7 @@ import com.moneyvalue.domain.Account;
 import com.moneyvalue.domain.DomainObject;
 import com.moneyvalue.lazyloaders.virtualproxy.TransactionListProxy;
 
-public abstract class AbstractMaper {
+public abstract class AbstractMapper {
 	protected static ResultSet getResultSet(String stmt) {
 		PostgreSQLJDBCConnection connection = null;
 		try {

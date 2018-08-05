@@ -8,7 +8,7 @@ import com.moneyvalue.domain.Family;
 import com.moneyvalue.domain.Person;
 import com.moneyvalue.lazyloaders.virtualproxy.AccountListProxy;
 
-public class PersonMapper extends AbstractMaper {
+public class PersonMapper extends AbstractMapper {
 	
 	public List<Person> findByFamilyID(Family family) {
 		ArrayList<Person> personList = this.abstractFindBy(family);

@@ -5,7 +5,7 @@ import java.sql.SQLException;
 import com.moneyvalue.domain.Family;
 import com.moneyvalue.lazyloaders.virtualproxy.PersonListProxy;
 
-public class FamilyMapper extends AbstractMaper {
+public class FamilyMapper extends AbstractMapper {
 	public static Family find(int id) {
 		return null;
 	}
